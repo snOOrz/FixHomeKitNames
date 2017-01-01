@@ -115,11 +115,13 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
     */
     @IBAction func didTapAddButton() {
         let name = trimmedName
+        let siriName = trimmedSiriName
+
         showActivityIndicator()
         
         if editingExistingAccessory {
             home(home, assignAccessory: accessory, toRoom: selectedRoom)
-            updateName(name, forAccessory: accessory)
+            updateName(name, siriName: siriName, forAccessory: accessory)
         }
         else {
             dispatch_group_enter(saveAccessoryGroup)
@@ -132,7 +134,7 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
                 else {
                     // Once it's successfully added to the home, add it to the room that's selected.
                     self.home(self.home, assignAccessory:self.accessory, toRoom: self.selectedRoom)
-                    self.updateName(name, forAccessory: self.accessory)
+                    self.updateName(name, siriName: siriName, forAccessory: self.accessory)
                 }
                 dispatch_group_leave(self.saveAccessoryGroup)
             }
@@ -175,17 +177,27 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
         - parameter name:      The new name for the accessory.
         - parameter accessory: The accessory to rename.
     */
-    func updateName(name: String, forAccessory accessory: HMAccessory) {
-        if accessory.name == name {
-            return
-        }
-        dispatch_group_enter(saveAccessoryGroup)
-        accessory.updateName(name) { error in
-            if let error = error {
-                self.displayError(error)
-                self.didEncounterError = true
+    func updateName(name: String, siriName: String, forAccessory accessory: HMAccessory) {
+        if accessory.name != name {
+            dispatch_group_enter(saveAccessoryGroup)
+            accessory.updateName(name) { error in
+                if let error = error {
+                    self.displayError(error)
+                    self.didEncounterError = true
+                }
+                dispatch_group_leave(self.saveAccessoryGroup)
             }
-            dispatch_group_leave(self.saveAccessoryGroup)
+        }
+
+        if accessory.siriName != siriName {
+            dispatch_group_enter(saveAccessoryGroup)
+            accessory.updateSiriName(siriName) { error in
+                if let error = error {
+                    self.displayError(error)
+                    self.didEncounterError = true
+                }
+                dispatch_group_leave(self.saveAccessoryGroup)
+            }
         }
     }
     
@@ -246,6 +258,11 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
         return nameField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     }
     
+    /// - returns:  The `siriNameField`'s text, trimmed of newline and whitespace characters.
+    var trimmedSiriName: String {
+        return siriNameField.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    }
+
     /// Enables or disables the add button.
     @IBAction func nameFieldDidChange(sender: AnyObject) {
         enableAddButtonIfApplicable()
