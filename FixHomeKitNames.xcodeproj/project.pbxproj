@@ -39,6 +39,7 @@
 		6ADF25221AE5AA8200CD05D0 /* TextCharacteristicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ADF25211AE5AA8200CD05D0 /* TextCharacteristicCell.xib */; };
 		6ADF25241AE5AAA100CD05D0 /* TextCharacteristicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF25231AE5AAA100CD05D0 /* TextCharacteristicCell.swift */; };
 		6AE2A5641B17B84B002586A9 /* CNMutablePostalAddress+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2A5631B17B84B002586A9 /* CNMutablePostalAddress+Convenience.swift */; };
+		99727FD81E18D03C00594396 /* HMAccessory+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99727FD71E18D03C00594396 /* HMAccessory+Properties.swift */; };
 		DC0BBB991A1FB60E002AB35C /* ServiceGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0BBB981A1FB60E002AB35C /* ServiceGroupViewController.swift */; };
 		DC0BBB9D1A1FBC46002AB35C /* AddServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0BBB9C1A1FBC46002AB35C /* AddServicesViewController.swift */; };
 		DC1310FC1A1438CB004E5DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1310EE1A1438CB004E5DB5 /* AppDelegate.swift */; };
@@ -127,6 +128,7 @@
 		6ADF25211AE5AA8200CD05D0 /* TextCharacteristicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCharacteristicCell.xib; sourceTree = "<group>"; };
 		6ADF25231AE5AAA100CD05D0 /* TextCharacteristicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCharacteristicCell.swift; sourceTree = "<group>"; };
 		6AE2A5631B17B84B002586A9 /* CNMutablePostalAddress+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNMutablePostalAddress+Convenience.swift"; sourceTree = "<group>"; };
+		99727FD71E18D03C00594396 /* HMAccessory+Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HMAccessory+Properties.swift"; sourceTree = "<group>"; };
 		DC0BBB981A1FB60E002AB35C /* ServiceGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ServiceGroupViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		DC0BBB9C1A1FBC46002AB35C /* AddServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AddServicesViewController.swift; sourceTree = "<group>"; tabWidth = 4; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC1310BE1A14201E004E5DB5 /* FixHomeKitNames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixHomeKitNames.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +303,7 @@
 				6AA850D91B1E645300A77A3E /* UITableViewController+Convenience.swift */,
 				DC1310FA1A1438CB004E5DB5 /* UIViewController+Convenience.swift */,
 				DC1310F81A1438CB004E5DB5 /* Info.plist */,
+				99727FD71E18D03C00594396 /* HMAccessory+Properties.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				6A8347531B0574040055198E /* CharacteristicSelectionViewController.swift in Sources */,
 				6ACBCFA01B040AA600851BD3 /* HMEventTrigger+Convenience.swift in Sources */,
 				6ABBF3021ADF1A1C00C1CF69 /* Array+Sorting.swift in Sources */,
+				99727FD81E18D03C00594396 /* HMAccessory+Properties.swift in Sources */,
 				6A4D140F1ADDF2DC00364DE0 /* HMCatalogViewController.swift in Sources */,
 				DCD480761A16CDDB001BFEE3 /* HomeListConfigurationViewController.swift in Sources */,
 				DCF046C21A1A5E50002DBFBF /* UIStoryboardSegue+IntendedDestination.swift in Sources */,

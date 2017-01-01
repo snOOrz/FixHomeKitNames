@@ -11,9 +11,9 @@ import HomeKit
 
 /// Represents the sections in the `ModifyAccessoryViewController`.
 enum AddAccessoryTableViewSection: Int {
-    case Name, Rooms, Identify
+    case Name, SiriName, Rooms, Identify
     
-    static let count = 3
+    static let count = 4
 }
 
 /// Contains a method for notifying the delegate that the accessory was saved.
@@ -38,6 +38,7 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
     private var selectedRoom: HMRoom!
     
     @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var siriNameField: UITextField!
     private lazy var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     
     private let saveAccessoryGroup = dispatch_group_create()
@@ -75,7 +76,7 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
             */
             navigationItem.leftBarButtonItem = nil
         }
-        
+
         // Put the accessory's name in the 'name' field.
         resetNameField()
         
@@ -175,11 +176,11 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
         - parameter accessory: The accessory to rename.
     */
     func updateName(name: String, forAccessory accessory: HMAccessory) {
-        if accessory.services[0].name == name {
+        if accessory.name == name {
             return
         }
         dispatch_group_enter(saveAccessoryGroup)
-        accessory.services[0].updateName(name) { error in
+        accessory.updateName(name) { error in
             if let error = error {
                 self.displayError(error)
                 self.didEncounterError = true
@@ -227,9 +228,11 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
         else {
             action = NSLocalizedString("Add %@", comment: "Add Accessory")
         }
-        navigationItem.title = NSString(format: action, accessory.services[0].name) as String
-        nameField.text = accessory.services[0].name
+        navigationItem.title = NSString(format: action, accessory.name) as String
+        nameField.text = accessory.name
         nameField.enabled = home.isAdmin
+        siriNameField.text = accessory.siriName
+        siriNameField.enabled = home.isAdmin
         enableAddButtonIfApplicable()
     }
     

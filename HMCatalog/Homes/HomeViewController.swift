@@ -458,7 +458,7 @@ class HomeViewController: HMCatalogViewController, HMAccessoryDelegate {
         switch HomeKitObjectSection(rawValue: indexPath.section) {
             case .Accessory?:
                 let accessory = homeKitObject as! HMAccessory
-                name = accessory.name
+                name = accessory.name + " - " + accessory.siriName
                 
             case .Room?:
                 let room = homeKitObject as! HMRoom
