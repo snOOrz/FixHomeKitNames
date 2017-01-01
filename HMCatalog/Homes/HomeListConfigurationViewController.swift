@@ -12,8 +12,9 @@ import HomeKit
 // Represents the sections in the `HomeListConfigurationViewController`.
 enum HomeListSection: Int {
     case Homes, PrimaryHome
-    
-    static let count = 2
+
+    // Only show Homes
+    static let count = 1
 }
 
 /**
@@ -39,9 +40,9 @@ class HomeListConfigurationViewController: HomeListViewController {
     /// Provides the number of rows in the section using the internal home's list.
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch HomeListSection(rawValue: section) {
-            // Add row.
+            // Disable Add row.
             case .Homes?:
-                return homes.count + 1
+                return homes.count
 
             // 'No homes' row.
             case .PrimaryHome?:

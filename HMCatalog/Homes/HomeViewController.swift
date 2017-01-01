@@ -359,14 +359,9 @@ class HomeViewController: HMCatalogViewController, HMAccessoryDelegate {
         }
         
         let objectCount = objectCollection.objectsForSection(sectionEnum).count
-        if home.isAdmin {
-            // For add row.
-            return objectCount + 1
-        }
-        else {
-            // Always show at least one row in the section.
-            return max(objectCount, 1)
-        }
+
+        // Disabble "Add ..."
+        return objectCount
     }
     
     /// Generates a cell based on it's computed type.

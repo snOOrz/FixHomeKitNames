@@ -94,7 +94,7 @@
 
 /* Begin PBXFileReference section */
 		3E7CACDF1B1E4AAB00891CE0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		6A10AEE81AF84BEA000A2CD6 /* HMCatalog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HMCatalog.entitlements; sourceTree = "<group>"; };
+		6A10AEE81AF84BEA000A2CD6 /* FixHomeKitNames.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FixHomeKitNames.entitlements; sourceTree = "<group>"; };
 		6A3B541E1AF92D37007CA237 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		6A4D140E1ADDF2DC00364DE0 /* HMCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMCatalogViewController.swift; sourceTree = "<group>"; };
 		6A589F631B0FAF3200CDD54B /* SegmentedTimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = SegmentedTimeCell.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -129,7 +129,7 @@
 		6AE2A5631B17B84B002586A9 /* CNMutablePostalAddress+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNMutablePostalAddress+Convenience.swift"; sourceTree = "<group>"; };
 		DC0BBB981A1FB60E002AB35C /* ServiceGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ServiceGroupViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		DC0BBB9C1A1FBC46002AB35C /* AddServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AddServicesViewController.swift; sourceTree = "<group>"; tabWidth = 4; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		DC1310BE1A14201E004E5DB5 /* HMCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC1310BE1A14201E004E5DB5 /* FixHomeKitNames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixHomeKitNames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1310EE1A1438CB004E5DB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; tabWidth = 4; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC1310F31A1438CB004E5DB5 /* HMCharacteristic+Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "HMCharacteristic+Properties.swift"; sourceTree = "<group>"; tabWidth = 4; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC1310F41A1438CB004E5DB5 /* HMService+Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "HMService+Properties.swift"; sourceTree = "<group>"; tabWidth = 4; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -254,7 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				3E7CACDF1B1E4AAB00891CE0 /* README.md */,
-				6A10AEE81AF84BEA000A2CD6 /* HMCatalog.entitlements */,
+				6A10AEE81AF84BEA000A2CD6 /* FixHomeKitNames.entitlements */,
 				DC1310ED1A1438CB004E5DB5 /* HMCatalog */,
 				DC1310BF1A14201E004E5DB5 /* Products */,
 			);
@@ -263,7 +263,7 @@
 		DC1310BF1A14201E004E5DB5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC1310BE1A14201E004E5DB5 /* HMCatalog.app */,
+				DC1310BE1A14201E004E5DB5 /* FixHomeKitNames.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -415,9 +415,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DC1310BD1A14201E004E5DB5 /* HMCatalog */ = {
+		DC1310BD1A14201E004E5DB5 /* FixHomeKitNames */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC1310DD1A14201E004E5DB5 /* Build configuration list for PBXNativeTarget "HMCatalog" */;
+			buildConfigurationList = DC1310DD1A14201E004E5DB5 /* Build configuration list for PBXNativeTarget "FixHomeKitNames" */;
 			buildPhases = (
 				DC1310BA1A14201E004E5DB5 /* Sources */,
 				DC1310BB1A14201E004E5DB5 /* Frameworks */,
@@ -428,9 +428,9 @@
 			);
 			dependencies = (
 			);
-			name = HMCatalog;
+			name = FixHomeKitNames;
 			productName = sldkfjghslkjdgh;
-			productReference = DC1310BE1A14201E004E5DB5 /* HMCatalog.app */;
+			productReference = DC1310BE1A14201E004E5DB5 /* FixHomeKitNames.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -445,7 +445,9 @@
 				TargetAttributes = {
 					DC1310BD1A14201E004E5DB5 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = B7GQB6LM7K;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HomeKit = {
 								enabled = 1;
@@ -457,7 +459,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DC1310B91A14201E004E5DB5 /* Build configuration list for PBXProject "HMCatalog" */;
+			buildConfigurationList = DC1310B91A14201E004E5DB5 /* Build configuration list for PBXProject "FixHomeKitNames" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -470,7 +472,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DC1310BD1A14201E004E5DB5 /* HMCatalog */,
+				DC1310BD1A14201E004E5DB5 /* FixHomeKitNames */,
 			);
 		};
 /* End PBXProject section */
@@ -654,15 +656,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HMCatalog.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FixHomeKitNames.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B7GQB6LM7K;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HMCatalog/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = HMCatalog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.live.petersun.FixHomeKitNames;
+				PRODUCT_NAME = FixHomeKitNames;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 2.3;
 			};
@@ -672,15 +675,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = HMCatalog.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FixHomeKitNames.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = B7GQB6LM7K;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HMCatalog/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = HMCatalog;
+				PRODUCT_BUNDLE_IDENTIFIER = com.live.petersun.FixHomeKitNames;
+				PRODUCT_NAME = FixHomeKitNames;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
@@ -690,7 +694,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC1310B91A14201E004E5DB5 /* Build configuration list for PBXProject "HMCatalog" */ = {
+		DC1310B91A14201E004E5DB5 /* Build configuration list for PBXProject "FixHomeKitNames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC1310DB1A14201E004E5DB5 /* Debug */,
@@ -699,7 +703,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC1310DD1A14201E004E5DB5 /* Build configuration list for PBXNativeTarget "HMCatalog" */ = {
+		DC1310DD1A14201E004E5DB5 /* Build configuration list for PBXNativeTarget "FixHomeKitNames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC1310DE1A14201E004E5DB5 /* Debug */,

@@ -175,11 +175,11 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
         - parameter accessory: The accessory to rename.
     */
     func updateName(name: String, forAccessory accessory: HMAccessory) {
-        if accessory.name == name {
+        if accessory.services[0].name == name {
             return
         }
         dispatch_group_enter(saveAccessoryGroup)
-        accessory.updateName(name) { error in
+        accessory.services[0].updateName(name) { error in
             if let error = error {
                 self.displayError(error)
                 self.didEncounterError = true
@@ -227,8 +227,8 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
         else {
             action = NSLocalizedString("Add %@", comment: "Add Accessory")
         }
-        navigationItem.title = NSString(format: action, accessory.name) as String
-        nameField.text = accessory.name
+        navigationItem.title = NSString(format: action, accessory.services[0].name) as String
+        nameField.text = accessory.services[0].name
         nameField.enabled = home.isAdmin
         enableAddButtonIfApplicable()
     }

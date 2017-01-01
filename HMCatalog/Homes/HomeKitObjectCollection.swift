@@ -12,8 +12,9 @@ import HomeKit
 /// Represents the all different types of HomeKit objects.
 enum HomeKitObjectSection: Int {
     case Accessory, Room, Zone, User, ActionSet, Trigger, ServiceGroup
-    
-    static let count = 7
+
+    // Only show Accessories
+    static let count = 1
 }
 
 /**
