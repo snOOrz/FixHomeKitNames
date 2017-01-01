@@ -123,8 +123,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Accessory Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgI-6z-4iT">
-                                                    <rect key="frame" x="17" y="0.0" width="575" height="43"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Accessory Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wgI-6z-4iT">
+                                                    <rect key="frame" x="17" y="0.0" width="350" height="43"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -151,8 +151,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Siri Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zSu-Xq-AV0">
-                                                    <rect key="frame" x="17" y="0.0" width="575" height="43"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Siri Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zSu-Xq-AV0">
+                                                    <rect key="frame" x="17" y="0.0" width="350" height="43"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -237,7 +237,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwm-jk-FoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1487" y="2094"/>
+            <point key="canvasLocation" x="-1487.5" y="2093.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pts-fj-C02">
