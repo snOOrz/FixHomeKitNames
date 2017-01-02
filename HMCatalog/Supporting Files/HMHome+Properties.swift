@@ -118,21 +118,24 @@ extension HMHome {
         }
         return nil
     }
-    
-    /**
-        - parameter room: The room.
-        
-        - returns:  The name of the room, appending "Default Room" if the room
-                    is the home's `roomForEntireHome`
-    */
-    func nameForRoom(room: HMRoom) -> String {
-        if room == self.roomForEntireHome() {
-            let defaultRoom = NSLocalizedString("Default Room", comment: "Default Room")
-            return room.name + " (\(defaultRoom))"
-        }
-        return room.name
+
+    func nameForRoomId(uuid: String) -> String {
+        return roomFromId(uuid).name
     }
-    
+
+    func roomFromId(uuid : String) -> HMRoom {
+        for room in self.rooms {
+            if (room.uniqueIdentifier.UUIDString == uuid) {
+                return room
+            }
+        }
+        return self.roomForEntireHome()
+    }
+
+    public func assignAccessory(accessory: HMAccessory, toRoomId roomId: String, completionHandler completion: (NSError?) -> Void) {
+        self.assignAccessory(accessory, toRoom: roomFromId(roomId), completionHandler: completion)
+    }
+
     /**
         - parameter zone:  The zone.
         - parameter rooms: A list of rooms to add to the final list.

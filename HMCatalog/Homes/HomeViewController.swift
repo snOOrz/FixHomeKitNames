@@ -458,11 +458,25 @@ class HomeViewController: HMCatalogViewController, HMAccessoryDelegate {
         switch HomeKitObjectSection(rawValue: indexPath.section) {
             case .Accessory?:
                 let accessory = homeKitObject as! HMAccessory
-                name = accessory.name + " - " + accessory.siriName
+                let backuped = NSUserDefaults.standardUserDefaults().stringArrayForKey(accessory.uniqueIdentifier.UUIDString)
                 
+                // Three conditions:
+                // 1. Name is the same as backuped
+                // 2. Name is not backuped
+                // 3. Name is different from backuped, can be fixed
+                if (backuped != nil) {
+                    if ((accessory.siriName != backuped![0]) || (accessory.room?.uniqueIdentifier.UUIDString != backuped![1])) {
+                        name = "🔧" + accessory.name + " -> (" + backuped![0] + " - " + home.nameForRoomId(backuped![1]) + ")"
+                    } else {
+                        name = "✅" + accessory.name + " : " + accessory.siriName + " - " + (accessory.room?.name)!
+                    }
+                } else {
+                    name = "🆕" + accessory.name + " : " + accessory.siriName + " - " + (accessory.room?.name)!
+                }
+
             case .Room?:
                 let room = homeKitObject as! HMRoom
-                name = self.home.nameForRoom(room)
+                name = room.name
                 
             case .Zone?:
                 let zone = homeKitObject as! HMZone
@@ -920,5 +934,85 @@ class HomeViewController: HMCatalogViewController, HMAccessoryDelegate {
     
     func accessoryDidUpdateName(accessory: HMAccessory) {
         didModifyHomeKitObject(accessory)
+    }
+
+    @IBAction func backupButtonPressed(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        for accessory in home.accessories {
+            if (accessory.reachable) {
+                let array : NSArray = [accessory.siriName, (accessory.room?.uniqueIdentifier.UUIDString)!];
+                defaults.setObject(array, forKey: accessory.uniqueIdentifier.UUIDString);
+            }
+        }
+
+        defaults.synchronize()
+
+        self.reloadTable()
+    }
+    
+    @IBOutlet /* strong */ var fixButton: UIBarButtonItem!
+    private let saveAccessoryGroup = dispatch_group_create()
+    private var didEncounterError = false
+    private lazy var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+
+    /// Replaces the activity indicator with the 'Add' or 'Save' button.
+    func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
+        navigationItem.rightBarButtonItem = self.fixButton
+    }
+    
+    /// Temporarily replaces the 'Add' or 'Save' button with an activity indicator.
+    func showActivityIndicator() {
+        self.fixButton = navigationItem.rightBarButtonItem
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+        activityIndicator.startAnimating()
+    }
+
+    func updateSiriName(accessory : HMAccessory, siriName : String) {
+        if (accessory.siriName != siriName) {
+            dispatch_group_enter(saveAccessoryGroup)
+            accessory.updateSiriName(siriName) { error in
+                if let error = error {
+                    self.displayError(error)
+                    self.didEncounterError = true
+                }
+                dispatch_group_leave(self.saveAccessoryGroup)
+            }
+        }
+    }
+
+    func updateRoom(accessory : HMAccessory, roomId : String) {
+        if (accessory.room?.uniqueIdentifier.UUIDString != roomId) {
+            dispatch_group_enter(saveAccessoryGroup)
+            home.assignAccessory(accessory, toRoomId: roomId) { error in
+                if let error = error {
+                    self.displayError(error)
+                    self.didEncounterError = true
+                }
+                dispatch_group_leave(self.saveAccessoryGroup)
+            }
+        }
+    }
+
+    @IBAction func fixButtonPressed(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        self.didEncounterError = false
+        showActivityIndicator()
+
+        for accessory in home.accessories {
+            if (accessory.reachable && (accessory.name == accessory.siriName) && !self.didEncounterError) {
+                let backuped = defaults.stringArrayForKey(accessory.uniqueIdentifier.UUIDString)
+                
+                if (backuped != nil) {
+                    updateSiriName(accessory, siriName: backuped![0])
+                    updateRoom(accessory, roomId: backuped![1])
+                }
+            }
+        }
+
+        dispatch_group_notify(saveAccessoryGroup, dispatch_get_main_queue()) {
+            self.hideActivityIndicator()
+            self.reloadTable()
+        }
     }
 }

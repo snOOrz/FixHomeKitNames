@@ -325,7 +325,7 @@ class ModifyAccessoryViewController: HMCatalogViewController, HMAccessoryDelegat
         let cell = tableView.dequeueReusableCellWithIdentifier(Identifiers.roomCell, forIndexPath: indexPath)
         let room = home.allRooms[indexPath.row] as HMRoom
         
-        cell.textLabel?.text = home.nameForRoom(room)
+        cell.textLabel?.text = room.name
         
         // Put a checkmark on the selected room.
         cell.accessoryType = room == selectedRoom ? .Checkmark : .None

@@ -40,6 +40,8 @@
 		6ADF25241AE5AAA100CD05D0 /* TextCharacteristicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF25231AE5AAA100CD05D0 /* TextCharacteristicCell.swift */; };
 		6AE2A5641B17B84B002586A9 /* CNMutablePostalAddress+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE2A5631B17B84B002586A9 /* CNMutablePostalAddress+Convenience.swift */; };
 		99727FD81E18D03C00594396 /* HMAccessory+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99727FD71E18D03C00594396 /* HMAccessory+Properties.swift */; };
+		99727FDB1E192F3F00594396 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99727FDA1E192F3F00594396 /* HomeKit.framework */; };
+		99727FDD1E192F4500594396 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99727FDC1E192F4500594396 /* ExternalAccessory.framework */; };
 		DC0BBB991A1FB60E002AB35C /* ServiceGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0BBB981A1FB60E002AB35C /* ServiceGroupViewController.swift */; };
 		DC0BBB9D1A1FBC46002AB35C /* AddServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0BBB9C1A1FBC46002AB35C /* AddServicesViewController.swift */; };
 		DC1310FC1A1438CB004E5DB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1310EE1A1438CB004E5DB5 /* AppDelegate.swift */; };
@@ -129,6 +131,8 @@
 		6ADF25231AE5AAA100CD05D0 /* TextCharacteristicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCharacteristicCell.swift; sourceTree = "<group>"; };
 		6AE2A5631B17B84B002586A9 /* CNMutablePostalAddress+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CNMutablePostalAddress+Convenience.swift"; sourceTree = "<group>"; };
 		99727FD71E18D03C00594396 /* HMAccessory+Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HMAccessory+Properties.swift"; sourceTree = "<group>"; };
+		99727FDA1E192F3F00594396 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		99727FDC1E192F4500594396 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		DC0BBB981A1FB60E002AB35C /* ServiceGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ServiceGroupViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		DC0BBB9C1A1FBC46002AB35C /* AddServicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AddServicesViewController.swift; sourceTree = "<group>"; tabWidth = 4; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DC1310BE1A14201E004E5DB5 /* FixHomeKitNames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixHomeKitNames.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99727FDD1E192F4500594396 /* ExternalAccessory.framework in Frameworks */,
+				99727FDB1E192F3F00594396 /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +258,15 @@
 			path = Mapping;
 			sourceTree = "<group>";
 		};
+		99727FD91E192F3F00594396 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99727FDC1E192F4500594396 /* ExternalAccessory.framework */,
+				99727FDA1E192F3F00594396 /* HomeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DC1310B51A14201E004E5DB5 = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +274,7 @@
 				6A10AEE81AF84BEA000A2CD6 /* FixHomeKitNames.entitlements */,
 				DC1310ED1A1438CB004E5DB5 /* HMCatalog */,
 				DC1310BF1A14201E004E5DB5 /* Products */,
+				99727FD91E192F3F00594396 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

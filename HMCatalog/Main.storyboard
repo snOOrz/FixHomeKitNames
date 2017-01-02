@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h3V-UA-Z11">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jen-Og-5hu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="a2D-Kq-H0T">
-            <objects>
-                <tabBarController id="h3V-UA-Z11" customClass="TabBarController" customModule="FixHomeKitNames" customModuleProvider="target" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="yIW-Xi-Rat">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="jen-Og-5hu" kind="relationship" relationship="viewControllers" id="FNn-dW-ob4"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YjE-rC-JpK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3535" y="-563"/>
-        </scene>
         <!--Homes-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
@@ -330,18 +313,35 @@
                             <outlet property="delegate" destination="wfU-5h-qsZ" id="oK1-kv-79B"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Configure" image="ConfigureTabIcon" id="BMh-31-w2d">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="SelectedConfigureTabIcon"/>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" title="Home" id="TtY-gV-83k">
-                        <barButtonItem key="backBarButtonItem" title=" " id="Gd1-Q6-Ddo"/>
+                    <navigationItem key="navigationItem" title="Homes" id="TtY-gV-83k">
+                        <rightBarButtonItems>
+                            <barButtonItem style="done" id="24m-B7-b8E">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zor-Ul-3yr">
+                                    <rect key="frame" x="319" y="7" width="40" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" title="Fix"/>
+                                    <connections>
+                                        <action selector="fixButtonPressed:" destination="wfU-5h-qsZ" eventType="primaryActionTriggered" id="0Ww-cc-VIf"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem style="done" id="do0-e8-Ue2">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JZ6-vm-Mpv">
+                                    <rect key="frame" x="251" y="7" width="60" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Backup"/>
+                                    <connections>
+                                        <action selector="backupButtonPressed:" destination="wfU-5h-qsZ" eventType="primaryActionTriggered" id="vvg-hw-yU5"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWS-NC-fyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1290" y="186"/>
+            <point key="canvasLocation" x="-1290.4000000000001" y="185.75712143928038"/>
         </scene>
     </scenes>
     <resources>
